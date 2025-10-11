@@ -258,10 +258,10 @@ const AllBooks = () => {
         {filteredBooks.map((book) => (
           <div
             key={book.id}
-            className="border-[3px] border-[#d8d8d8] hover:scale-[1.01] hover:shadow-xl transition-all duration-300 p-3 rounded-xl min-h-0 flex flex-col justify-between"
+            className="border-[3px] border-[#d8d8d8] hover:scale-[1.01] hover:shadow-xl transition-all duration-300 p-3 rounded-xl min-h-64 flex flex-col justify-between"
           >
             {editingBook === book.id ? (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 overflow-y-auto overflow-hidden  px-5">
                 <input
                   type="text"
                   name="title"

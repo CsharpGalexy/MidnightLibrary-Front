@@ -61,14 +61,14 @@ const AllCategory: React.FC<AllCategoryProps> = ({
         نمایش و حذف و ویرایش دسته بندی
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-h-80 overflow-y-auto py-6 px-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-h-80 overflow-y-auto py-6 px-2">
         {filtredCategories.map((cat) => (
           <div
             key={cat.id}
-            className="border-[3px] border-[#d8d8d8] hover:scale-[1.01] hover:shadow-xl transition-all duration-300 p-3 rounded-xl min-h-0 flex flex-col justify-between"
+            className="border-[3px] border-[#d8d8d8] hover:scale-[1.01] hover:shadow-xl transition-all duration-300 p-3 rounded-xl min-h-64 flex flex-col justify-between"
           >
             {editingCategory === cat.id ? (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 overflow-y-auto overflow-hidden  px-5">
                 <input
                   type="text"
                   name="name"
