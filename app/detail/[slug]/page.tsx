@@ -83,9 +83,10 @@ export default function DetailPage({ params }: DetailPageProps) {
           { params: { pageNumber: 1, pageSize: 20 } }
         );
         const allBooks: Book[] = res.data.data.list;
-        setRelatedBooks(
-          allBooks.filter((b) => b.categoryName === book.categoryName)
-        );
+        setRelatedBooks(allBooks.filter((b) =>
+          b.slug !== book.slug && 
+          (b.author === book.author || b.categoryName === book.categoryName)
+        ));
       } catch (error) {
         console.error("Error fetching related books:", error);
       }
